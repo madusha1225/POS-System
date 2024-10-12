@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Item - ShopPoint</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #dfeee6;
+    }
+    .sidebar {
+      background-color: #f0f0f0;
+      height: 100vh;
+      padding: 20px;
+    }
+    .sidebar .nav-link {
+      color: #333;
+      margin: 10px 0;
+      background: #d4c8fc;
+      border-radius: 20px;
+      text-align: center;
+      padding: 10px;
+    }
+    .sidebar .nav-link.active {
+      background: #8dc88f;
+      color: #fff;
+    }
+    .content {
+      padding: 20px;
+    }
+    .form-control {
+      border-radius: 10px;
+    }
+    .btn-custom {
+      border-radius: 15px;
+      margin-right: 10px;
+    }
+    .btn-view-all {
+      background-color: #32CD32;
+      color: white;
+      border-radius: 15px;
+    }
+    .table-container {
+      margin-top: 20px;
+    }
+    .table thead th {
+      background: #8dc88f;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-3 col-lg-2 sidebar">
+      <div class="text-center mb-4">
+        <img src="img/a-logo-for-the-pos-management-system-named-shoppoi-lX1YuVKgTfKXMw_gV9Bfng-f-t107laThOnEgBWMOhn7w.jpeg" alt="ShopPoint Logo" class="img-fluid" style="max-width: 100px;">
+      </div>
+      <nav class="nav flex-column">
+        <a class="nav-link" href="#">Dashboard</a>
+        <a class="nav-link" href="#">Customer</a>
+        <a class="nav-link active" href="#">Item</a>
+        <a class="nav-link" href="#">Orders</a>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="col-md-9 col-lg-10 content">
+      <h2 class="mb-4">Manage Item</h2>
+
+      <!-- Form for managing customer -->
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="customerID">Item ID</label>
+            <input type="text" class="form-control" id="customerID" placeholder="Enter Customer ID">
+          </div>
+          <div class="form-group">
+            <label for="address">Model</label>
+            <input type="text" class="form-control" id="address" placeholder="Enter Address">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="nic">Unit Price</label>
+            <input type="text" class="form-control" id="nic" placeholder="Enter NIC">
+          </div>
+          <div class="form-group">
+            <label for="name">Quantity</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter Name">
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="mb-4">
+        <button class="btn btn-success btn-custom">Save</button>
+        <button class="btn btn-warning btn-custom">Update</button>
+        <button class="btn btn-danger btn-custom">Delete</button>
+        <button class="btn btn-view-all">View All</button>
+      </div>
+
+      <!-- Table for Customer Details -->
+      <div class="table-container">
+        <table class="table table-bordered">
+          <thead>
+          <tr>
+            <th>Item ID</th>
+            <th>Model</th>
+            <th>Unit Price</th>
+            <th>Quantity</th>
+          </tr>
+          </thead>
+          <tbody>
+          <!-- Example rows, replace with dynamic data -->
+          <tr>
+            <td>1</td>
+            <td>Harsha Dilan</td>
+            <td>Hoarana</td>
+            <td>Harsha@gamil.com</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Chamod Tejan</td>
+            <td>Ambalangoda</td>
+            <td>Chamod@gmail.com</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
