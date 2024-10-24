@@ -14,6 +14,7 @@
       background-color: #f0f0f0;
       height: 100vh;
       padding: 20px;
+      width: 15%;
     }
     .sidebar .nav-link {
       color: #333;
@@ -29,6 +30,7 @@
     }
     .content {
       padding: 20px;
+      width: 80%;
     }
     .card {
       border-radius: 15px;
@@ -57,13 +59,40 @@
       background: #8dc88f;
       color: #fff;
     }
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .sidebar {
+        height: auto;
+        padding: 10px;
+      }
+      .stats-container {
+        grid-template-columns: 1fr;
+      }
+      .btn-custom, .btn-view-all {
+        width: 100%;
+        margin-bottom: 5px;
+      }
+    }
+    @media (max-width: 576px) {
+      .sidebar{
+        display: none;
+      }
+      .content{
+        width: 90%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 10vh;
+        margin: auto;
+      }
+    }
   </style>
 </head>
 <body>
 <div class="container-fluid">
   <div class="row">
     <!-- Sidebar -->
-    <div class="col-md-3 col-lg-2 sidebar">
+    <div class="col-12 col-md-3 col-lg-2 sidebar">
       <div class="text-center mb-4">
         <img src="img/a-logo-for-the-pos-management-system-named-shoppoi-lX1YuVKgTfKXMw_gV9Bfng-f-t107laThOnEgBWMOhn7w.jpeg" alt="ShopPoint Logo" class="img-fluid" style="max-width: 100px;">
       </div>
@@ -76,7 +105,7 @@
     </div>
 
     <!-- Main Content -->
-    <div class="col-md-9 col-lg-10 content">
+    <div class="col-12 col-md-9 col-lg-10 content">
       <h2 class="mb-4">Dashboard</h2>
       <div class="stats-container">
         <div class="card">
@@ -114,7 +143,7 @@
       </div>
 
       <!-- Table for Customer Details -->
-      <div class="table-container">
+      <div class="table-container table-responsive">
         <table class="table table-bordered">
           <thead>
           <tr>

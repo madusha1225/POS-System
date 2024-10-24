@@ -22,6 +22,7 @@
       border-radius: 20px;
       text-align: center;
       padding: 10px;
+      width: 15%;
     }
     .sidebar .nav-link.active {
       background: #8dc88f;
@@ -29,6 +30,7 @@
     }
     .content {
       padding: 20px;
+      width: 80%;
     }
     .form-control {
       border-radius: 10px;
@@ -49,13 +51,37 @@
       background: #8dc88f;
       color: #fff;
     }
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .sidebar {
+        height: auto;
+        padding: 10px;
+      }
+      .btn-custom, .btn-view-all {
+        width: 100%;
+        margin-bottom: 5px;
+      }
+    }
+    @media (max-width: 576px) {
+      .sidebar{
+        display: none;
+      }
+      .content{
+        width: 90%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 10vh;
+        margin: auto;
+      }
+    }
   </style>
 </head>
 <body>
 <div class="container-fluid">
   <div class="row">
     <!-- Sidebar -->
-    <div class="col-md-3 col-lg-2 sidebar">
+    <div class="col-12 col-md-3 col-lg-2 sidebar">
       <div class="text-center mb-4">
         <img src="img/a-logo-for-the-pos-management-system-named-shoppoi-lX1YuVKgTfKXMw_gV9Bfng-f-t107laThOnEgBWMOhn7w.jpeg" alt="ShopPoint Logo" class="img-fluid" style="max-width: 100px;">
       </div>
@@ -68,12 +94,12 @@
     </div>
 
     <!-- Main Content -->
-    <div class="col-md-9 col-lg-10 content">
+    <div class="col-12 col-md-9 col-lg-10 content">
       <h2 class="mb-4">Manage Customer</h2>
 
       <!-- Form for managing customer -->
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-12 col-md-6">
           <div class="form-group">
             <label for="customerID">Customer ID</label>
             <input type="text" class="form-control" id="customerID" placeholder="Enter Customer ID">
@@ -87,7 +113,7 @@
             <input type="text" class="form-control" id="nic" placeholder="Enter NIC">
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-12 col-md-6">
           <div class="form-group">
             <label for="name">Name</label>
             <input type="text" class="form-control" id="name" placeholder="Enter Name">
@@ -112,7 +138,7 @@
       </div>
 
       <!-- Table for Customer Details -->
-      <div class="table-container">
+      <div class="table-container table-responsive">
         <table class="table table-bordered">
           <thead>
           <tr>

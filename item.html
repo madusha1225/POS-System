@@ -10,11 +10,13 @@
     body {
       background-color: #dfeee6;
     }
+
     .sidebar {
       background-color: #f0f0f0;
       height: 100vh;
       padding: 20px;
     }
+
     .sidebar .nav-link {
       color: #333;
       margin: 10px 0;
@@ -23,33 +25,111 @@
       text-align: center;
       padding: 10px;
     }
+
     .sidebar .nav-link.active {
       background: #8dc88f;
       color: #fff;
     }
+
     .content {
       padding: 20px;
+      width: 80%;
     }
+
     .form-control {
       border-radius: 10px;
     }
+
     .btn-custom {
       border-radius: 15px;
       margin-right: 10px;
     }
+
     .btn-view-all {
       background-color: #32CD32;
       color: white;
       border-radius: 15px;
     }
+
     .table-container {
       margin-top: 20px;
     }
+
     .table thead th {
       background: #8dc88f;
       color: #fff;
     }
+
+    /* Responsive adjustments */
+    @media (max-width: 992px) {
+      .sidebar {
+        height: auto;
+      }
+
+      .sidebar .nav-link {
+        font-size: 0.9rem;
+        padding: 8px;
+      }
+
+      .content {
+        padding: 10px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        height: auto;
+        padding: 10px;
+      }
+
+      .content {
+        padding: 10px;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .btn-custom {
+        margin-right: 5px;
+        margin-bottom: 10px;
+      }
+
+      .btn-view-all {
+        width: 100%;
+      }
+
+      .table-container {
+        overflow-x: auto;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .sidebar {
+        display: none;
+      }
+
+      .content {
+        padding: 5px;
+        width: 90%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 10vh;
+        margin: auto;
+      }
+
+      .btn-custom, .btn-view-all {
+        width: 100%;
+        margin-bottom: 5px;
+      }
+
+      .table-container {
+        overflow-x: auto;
+      }
+    }
   </style>
+
 </head>
 <body>
 <div class="container-fluid">

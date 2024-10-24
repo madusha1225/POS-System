@@ -6,63 +6,389 @@
   <title>Login Page - ShopPoint</title>
   <!-- Bootstrap CSS -->
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body {
-      background-color: #dfeee6;
-    }
-    .login-container {
-      max-width: 400px;
-      margin: 50px auto;
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-    .logo {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .logo img {
-      max-width: 100%;
-      height: auto;
-    }
-    .form-control {
-      border-radius: 20px;
-    }
-    .login-btn {
-      background-color: #8dc88f;
-      color: white;
-      border-radius: 20px;
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-6">
-      <div class="login-container text-center">
-        <div class="logo">
-          <!-- Replace with your logo -->
-          <img src="img/a-logo-for-a-pos-management-system-named-shoppoint-hJP-AgUMRBCEqNKYBTh2oA-f-t107laThOnEgBWMOhn7w.jpeg" alt="ShopPoint Logo">
-        </div>
-        <h2 class="mb-4">Login</h2>
-        <form>
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="User Name" required>
-          </div>
-          <div class="form-group">
-            <input type="password" class="form-control" placeholder="Password" required>
-          </div>
-          <button type="submit" class="btn login-btn btn-block">Login</button>
-        </form>
+<div class="col-12 col-md-3 col-lg-2 sidebar">
+  <div class="text-center mb-4">
+    <img src="img/a-logo-for-the-pos-management-system-named-shoppoi-lX1YuVKgTfKXMw_gV9Bfng-f-t107laThOnEgBWMOhn7w.jpeg" alt="ShopPoint Logo" class="img-fluid" style="max-width: 100px;">
+  </div>
+  <nav class="nav flex-column">
+    <span class="nav-link" id="dashboard-nav">Dashboard</span>
+    <span class="nav-link" id="customer-nav">Customer</span>
+    <span class="nav-link" id="item-nav">Item</span>
+    <span class="nav-link" id="order-nav">Orders</span>
+  </nav>
+</div>
+
+<div class="container" onclick="myFunction(this)">
+  <div class="bar1"></div>
+  <div class="bar2"></div>
+  <div class="bar3"></div>
+</div>
+
+<div class="menu-div">
+  <div id="dashboard-btn-menu">
+    <img width="24" height="24" src="https://img.icons8.com/material/24/dashboard-layout.png" alt="dashboard-layout"/>
+    <span>Dashboard</span>
+  </div>
+  <div  id="customer-btn-menu">
+    <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/gender-neutral-user.png" alt="gender-neutral-user"/>
+    <span>Customer</span>
+  </div>
+  <div  id="item-btn-menu">
+    <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/open-box.png" alt="open-box"/>
+    <span>Item</span>
+  </div>
+  <div  id="order-btn-menu">
+    <img width="48" height="48" src="https://img.icons8.com/sf-regular-filled/48/purchase-order.png" alt="purchase-order"/>
+    <span>Order</span>
+  </div>
+</div>
+
+<div id="dashboard" class="col-12 col-md-9 col-lg-10 content dashboard">
+  <h2 class="mb-4">Dashboard</h2>
+  <div class="stats-container">
+    <div class="card">
+      <div class="card-header" style="background: #a3e1a5;">
+        <span>Total Customers</span>
+      </div>
+      <div class="card-body text-center">
+        75
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" style="background: #f7f192;">
+        <span>One Day Orders</span>
+      </div>
+      <div class="card-body text-center">
+        75
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" style="background: #f7cb92;">
+        <span>Available Items</span>
+      </div>
+      <div class="card-body text-center">
+        75
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" style="background: #f7a3a5;">
+        <span>Unavailable Inventory</span>
+      </div>
+      <div class="card-body text-center">
+        75
       </div>
     </div>
   </div>
+
+  <!-- Table for Customer Details -->
+  <div class="table-container table-responsive">
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th>Customer ID</th>
+        <th>Customer Name</th>
+        <th>Customer Address</th>
+        <th>Customer Email</th>
+        <th>Customer NIC</th>
+        <th>Customer Tel</th>
+      </tr>
+      </thead>
+      <tbody>
+      <!-- Example rows, replace with dynamic data -->
+      <tr>
+        <td>1</td>
+        <td>Harsha Dilan</td>
+        <td>Horana</td>
+        <td>harsha@gamil.com</td>
+        <td>NIC12345</td>
+        <td>1234567890</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Jane Smith</td>
+        <td>456 Elm St</td>
+        <td>janesmith@example.com</td>
+        <td>NIC67890</td>
+        <td>0987654321</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
+<div id="customer" class="col-12 col-md-9 col-lg-10 content customer">
+  <h2 class="mb-4">Manage Customer</h2>
+
+  <!-- Form for managing customer -->
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <div class="form-group">
+        <label for="customerID">Customer ID</label>
+        <input type="text" class="form-control" id="customerID" placeholder="Enter Customer ID">
+      </div>
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input type="text" class="form-control" id="address" placeholder="Enter Address">
+      </div>
+      <div class="form-group">
+        <label for="nic">NIC</label>
+        <input type="text" class="form-control" id="nic" placeholder="Enter NIC">
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter Name">
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter Email">
+      </div>
+      <div class="form-group">
+        <label for="tel">Tel</label>
+        <input type="tel" class="form-control" id="tel" placeholder="Enter Telephone Number">
+      </div>
+    </div>
+  </div>
+
+  <!-- Action Buttons -->
+  <div class="mb-4">
+    <button class="btn btn-success btn-custom">Save</button>
+    <button class="btn btn-warning btn-custom">Update</button>
+    <button class="btn btn-danger btn-custom">Delete</button>
+    <button class="btn btn-view-all">View All</button>
+  </div>
+
+  <!-- Table for Customer Details -->
+  <div class="table-container table-responsive">
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th>Customer ID</th>
+        <th>Customer Name</th>
+        <th>Customer Address</th>
+        <th>Customer Email</th>
+        <th>Customer NIC</th>
+        <th>Customer Tel</th>
+      </tr>
+      </thead>
+      <tbody>
+      <!-- Example rows, replace with dynamic data -->
+      <tr>
+        <td>1</td>
+        <td>Harsha Dilan</td>
+        <td>Hoarana</td>
+        <td>harsha@gamil.com</td>
+        <td>NIC12345</td>
+        <td>077829893</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Chamod Tejan</td>
+        <td>Ambalangoda</td>
+        <td>chamod@example.com</td>
+        <td>NIC67890</td>
+        <td>077654321</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div id="item" class="col-md-9 col-lg-10 content item">
+  <h2 class="mb-4">Manage Item</h2>
+
+  <!-- Form for managing customer -->
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="itemID">Item ID</label>
+        <input type="text" class="form-control" id="itemID" placeholder="Enter Customer ID">
+      </div>
+      <div class="form-group">
+        <label for="model">Model</label>
+        <input type="text" class="form-control" id="model" placeholder="Enter Address">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="price">Unit Price</label>
+        <input type="text" class="form-control" id="price" placeholder="Enter NIC">
+      </div>
+      <div class="form-group">
+        <label for="qty">Quantity</label>
+        <input type="text" class="form-control" id="qty" placeholder="Enter Name">
+      </div>
+    </div>
+  </div>
+
+  <!-- Action Buttons -->
+  <div class="mb-4">
+    <button class="btn btn-success btn-custom">Save</button>
+    <button class="btn btn-warning btn-custom">Update</button>
+    <button class="btn btn-danger btn-custom">Delete</button>
+    <button class="btn btn-view-all">View All</button>
+  </div>
+
+  <!-- Table for Customer Details -->
+  <div class="table-container">
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th>Item ID</th>
+        <th>Model</th>
+        <th>Unit Price</th>
+        <th>Quantity</th>
+      </tr>
+      </thead>
+      <tbody>
+      <!-- Example rows, replace with dynamic data -->
+      <tr>
+        <td>1</td>
+        <td>Harsha Dilan</td>
+        <td>Hoarana</td>
+        <td>Harsha@gamil.com</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Chamod Tejan</td>
+        <td>Ambalangoda</td>
+        <td>Chamod@gmail.com</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div id="order" class="container-fluid order">
+  <h2 class="mt-3">Manage Orders</h2>
+
+  <!-- Invoice Details Section -->
+  <div class="row form-container mt-3">
+    <div class="col-md-6">
+      <div class="mb-3">
+        <label for="orderId" class="form-label">Order ID</label>
+        <input type="text" class="form-control" id="orderId">
+      </div>
+      <div class="mb-3">
+        <label for="orderDate" class="form-label">Date</label>
+        <input type="date" class="form-control" id="orderDate">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="mb-3">
+        <label for="orderCustomerId" class="form-label">Customer ID</label>
+        <input type="text" class="form-control" id="orderCustomerId">
+      </div>
+      <div class="mb-3">
+        <label for="customerName" class="form-label">Customer Name</label>
+        <input type="text" class="form-control" id="customerName">
+      </div>
+    </div>
+  </div>
+
+  <!-- Item Details Section -->
+  <div class="row form-container mt-3">
+    <div class="col-md-4">
+      <div class="mb-3">
+        <label for="orderItemId" class="form-label">Item ID</label>
+        <input type="text" class="form-control" id="orderItemId">
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="mb-3">
+        <label for="orderModel" class="form-label">Model</label>
+        <input type="text" class="form-control" id="orderModel">
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="mb-3">
+        <label for="onHandQuantity" class="form-label">On Hand Quantity</label>
+        <input type="number" class="form-control" id="onHandQuantity">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="mb-3">
+        <label for="unitPrice" class="form-label">Unit Price</label>
+        <input type="number" class="form-control" id="unitPrice">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="mb-3">
+        <label for="orderQuantity" class="form-label">Order Quantity</label>
+        <input type="number" class="form-control" id="orderQuantity">
+      </div>
+    </div>
+    <div class="col-md-12">
+      <button class="btn btn-custom">Add</button>
+    </div>
+  </div>
+
+  <!-- Order Table Section -->
+  <div class="row form-container mt-3">
+    <div class="col-md-12">
+      <table class="table table-bordered text-center">
+        <thead>
+        <tr>
+          <th>Item ID</th>
+          <th>Model</th>
+          <th>Unit Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>101</td>
+          <td>Model A</td>
+          <td>$50</td>
+          <td>2</td>
+          <td>$100</td>
+        </tr>
+        <!-- Add more rows as needed -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Summary and Actions Section -->
+  <div class="row form-container mt-3">
+    <div class="col-md-6">
+      <div class="mb-3">
+        <label for="total" class="form-label">Total</label>
+        <input type="number" class="form-control" id="total">
+      </div>
+      <div class="mb-3">
+        <label for="discount" class="form-label">Discount</label>
+        <input type="number" class="form-control" id="discount">
+      </div>
+      <div class="mb-3">
+        <label for="subTotal" class="form-label">Sub Total</label>
+        <input type="number" class="form-control" id="subTotal">
+      </div>
+      <div class="mb-3">
+        <label for="cash" class="form-label">Cash</label>
+        <input type="number" class="form-control" id="cash">
+      </div>
+      <div class="mb-3">
+        <label for="balance" class="form-label">Balance</label>
+        <input type="number" class="form-control" id="balance">
+      </div>
+    </div>
+    <div class="col-md-6 d-flex flex-column justify-content-around">
+      <button class="btn btn-custom mb-3">Place Order</button>
+      <button class="btn btn-custom mb-3">New Order</button>
+      <button class="btn btn-secondary mb-3">Clear</button>
+    </div>
+  </div>
+</div>
+
 
 <!-- Bootstrap JS and dependencies -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
