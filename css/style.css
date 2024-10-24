@@ -513,6 +513,9 @@ body {
   background-color: #3b8039;
   color: white;
 }
+#order .tbl{
+  overflow-x: auto;
+}
 #order .table th, #order .table td {
   vertical-align: middle;
 }
